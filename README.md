@@ -15,3 +15,5 @@ This app was written in Javascript with NodeJs and ExpressJs in the backend, and
 ReactJs in the frontend. I used create-react-app to create install React. If you
 have any troubles with it or want to know more about the library.
 Please visit their website https://github.com/facebookincubator/create-react-app
+
+## Final product
