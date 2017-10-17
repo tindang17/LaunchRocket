@@ -15,7 +15,6 @@ const getLaunches = () => {
     .on('response', (response) => {
       console.log(response.statusCode)
       console.log(response.headers['content-type'])
-      console.log('body', response.body);
     }).pipe(fs.createWriteStream('./launchData/launches.json'));
   console.log('Successfully request data from api');
 }
