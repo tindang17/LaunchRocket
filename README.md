@@ -1,4 +1,4 @@
-#About
+## About
 This is a simple app that import data from https://launchlibrary.net api to
 display information about:
 - Name of rocket being launched (e.g. "Falcon 9")
@@ -10,7 +10,7 @@ display information about:
 To use the app, simply clone it into your computer, then run npm install to
 install all the dependencies.
 
-#Dependencies
+## Dependencies
 This app was written in Javascript with NodeJs and ExpressJs in the backend, and
 ReactJs in the frontend. I used create-react-app to create install React. If you
 have any troubles with it or want to know more about the library.
