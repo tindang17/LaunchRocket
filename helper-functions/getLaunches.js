@@ -2,6 +2,8 @@ const request = require('request');
 const fs = require('fs');
 // import raw data from the api
 const getLaunches = () => {
+  // get these elements indidually to create a query that can dynamically track
+  // date
   let date = new Date();
   let day = date.getDate();
   let month = (date.getMonth())+1;

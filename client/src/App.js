@@ -14,7 +14,6 @@ class App extends Component {
     axios.get('/launches')
       .then(res => {
        let data = [];
-      console.log('IN APP', res.data);
        for(let key in res.data) {
           data.push(res.data[key]);
        }
@@ -22,7 +21,6 @@ class App extends Component {
       });
   }
   render() {
-    console.log("IN APP RENDER", this.state);
     return (
       <div className="App">
         <header className="App-header">

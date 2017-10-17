@@ -1,9 +1,12 @@
 const jsonfile = require('jsonfile');
+
 // Take json date and filtered it.
 const filterData = (cb) => {
+  // reade data from a json file
   let obj = jsonfile.readFileSync('./launchData/launches.json', 'utf-8');
   let missions = {};
   const launches = obj.launches
+  // filtering the key that I need
   launches.forEach((v, i) => {
     missions[launches[i].id] = {
       rocketName: launches[i].rocket.name,
