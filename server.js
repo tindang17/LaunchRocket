@@ -26,8 +26,9 @@ const filteredData = (obj) => {
 }
 
 
-app.get('/launches.json', (req, res) => {
+app.get('/', (req, res) => {
   let data = filteredData(obj)
+  console.log(data);
   // for (let i in data) {
   //   console.log(data[i]);
   // };

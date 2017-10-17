@@ -3,8 +3,12 @@ const fs = require('fs');
 
 const getLaunches = () => {
   // const missions = {};
+  let date = new Date();
+  let day = date.getDate();
+  let month = (date.getMonth())+1;
+  let year = date.getFullYear();
   const options = {
-    uri: 'https://launchlibrary.net/1.2/launch/2017-10-16',
+    uri: `https://launchlibrary.net/1.2/launch/${year}-${month}-${day}`,
     json: true
   };
   request
