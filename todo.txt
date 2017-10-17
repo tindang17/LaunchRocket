@@ -1,0 +1,8 @@
+Backend:
+1. Download the data form the API
+  Create functions to make http call to the API
+    -download upcoming launches
+  Assign the response to a variable
+2. Loop through each piece of data to filter out the required info
+3. Put all those info into a object
+4. Serve that info to our website.
