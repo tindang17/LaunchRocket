@@ -1,8 +1,7 @@
 const request = require('request');
 const fs = require('fs');
-
+// import raw data from the api
 const getLaunches = () => {
-  // const missions = {};
   let date = new Date();
   let day = date.getDate();
   let month = (date.getMonth())+1;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-import Header from './Component/Banner';
+import Header from './Component/Header';
 import Main from './Component/Main';
 class App extends Component {
   constructor(props) {
