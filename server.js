@@ -3,7 +3,9 @@ const app = express();
 const getLaunches = require('./helper-functions/getLaunches');
 const fs = require('fs');
 
-let obj = JSON.parse(fs.readFileSync('./launchData/launches.json', 'utf8'));
+
+const obj = JSON.parse(fs.readFileSync('./launchData/launches.json', 'utf8'))
+
 const filteredData = (obj) => {
   let missions = {};
   const launches = obj.launches
@@ -20,14 +22,17 @@ const filteredData = (obj) => {
       }
     }
   });
-  console.log(missions);
   return missions;
 }
 
-app.get('/', (req, res) => {
-  filteredData(obj);
-  res.status(200).send('done');
 
+app.get('/launches.json', (req, res) => {
+  let data = filteredData(obj)
+  // for (let i in data) {
+  //   console.log(data[i]);
+  // };
+  // const jsonData = JSON.stringify(data);
+  res.status(200).json(data);
 })
 
-app.listen(8080, getLaunches);
+app.listen(3001, getLaunches);
