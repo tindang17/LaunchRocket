@@ -13,13 +13,13 @@ const getLaunches = () => {
   };
   request
     .get(options)
-    .on('error', () => {
+    .on('error', (err) => {
       console.log('there is a error while retriving data', err);
     })
     .on('response', (response) => {
       console.log(response.statusCode)
       console.log(response.headers['content-type'])
+      console.log('Successfully request data from api');
     }).pipe(fs.createWriteStream('./launchData/launches.json'));
-  console.log('Successfully request data from api');
 }
 module.exports = getLaunches;

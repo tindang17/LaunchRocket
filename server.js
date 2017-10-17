@@ -2,11 +2,18 @@ const express = require('express');
 const app = express();
 const getLaunches = require('./helper-functions/getLaunches');
 const fs = require('fs');
+const jsonfile = require('jsonfile');
 
 
-const obj = JSON.parse(fs.readFileSync('./launchData/launches.json', 'utf8'))
+// syncrhonous way
 
-const filteredData = (obj) => {
+const filteredData = (cb) => {
+  let obj = jsonfile.readFileSync('./launchData/launches.json', 'utf-8');
+  // asynchronous way
+  // let obj = fs.readFile('./launchData/launches.json', 'utf8', (err, data) => {
+  //   if (err) throw err;
+  //   return JSON.parse(data);
+  // });
   let missions = {};
   const launches = obj.launches
   launches.forEach((v, i) => {
@@ -22,18 +29,18 @@ const filteredData = (obj) => {
       }
     }
   });
+  cb();
   return missions;
 }
 
-
-app.get('/', (req, res) => {
-  let data = filteredData(obj)
+app.get('/launches', (req, res) => {
+  let data = filteredData(getLaunches);
   console.log(data);
   // for (let i in data) {
   //   console.log(data[i]);
   // };
   // const jsonData = JSON.stringify(data);
-  res.status(200).json(data);
+  res.status(200).json(data).end();
 })
 
 app.listen(3001, getLaunches);

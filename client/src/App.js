@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-import Banner from './Component/Banner';
-import LaunchList from './Component/LaunchList';
+import Header from './Component/Banner';
+import Main from './Component/Main';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -11,18 +11,18 @@ class App extends Component {
     };
   }
   componentDidMount() {
-    axios.get('/launches.json')
+    axios.get('/launches')
       .then(res => {
        let data = [];
+      console.log('IN APP', res.data);
        for(let key in res.data) {
           data.push(res.data[key]);
        }
-      console.log(data);
         this.setState({launches: data});
       });
   }
   render() {
-    console.log(this.state);
+    console.log("IN APP RENDER", this.state);
     return (
       <div className="App">
         <header className="App-header">
@@ -33,8 +33,8 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <div>
-          <Banner />
-          <LaunchList launches = {this.state.launches} />
+          <Header />
+          <Main launches = {this.state.launches} />
         </div>
       </div>
     );
