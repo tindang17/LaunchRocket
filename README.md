@@ -17,3 +17,4 @@ have any troubles with it or want to know more about the library.
 Please visit their website https://github.com/facebookincubator/create-react-app
 
 ## Final product
+!["Screenshot of launches list"](https://github.com/tindang17/LaunchRocket/blob/master/docs/launches-list.png?raw=true)
